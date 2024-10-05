@@ -3945,7 +3945,7 @@ function buildClashRoutingRules (localDNS, blockAds, bypassIran, bypassChina, bl
     !isWarp && rules.push('NETWORK,udp,REJECT');
     blockAds && rules.push('GEOSITE,category-ads-all,REJECT', 'GEOSITE,category-ads-ir,REJECT');
     blockPorn && rules.push('GEOSITE,category-porn,REJECT');
-    rules.push('MATCH,自动选择');
+    rules.push('MATCH,✅ Selector');
 
     return rules;
 }
