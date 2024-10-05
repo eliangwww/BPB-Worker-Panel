@@ -18,7 +18,7 @@ let dohURL = 'https://cloudflare-dns.com/dns-query';
 let trojanPassword = `bpb-trojan`;
 // https://emn178.github.io/online-tools/sha224.html
 // https://www.atatus.com/tools/sha224-to-hash
-let hashPassword = '2fb069706d1fcda375c1cf3aa41db42ff3be3dd140680d69c8df66d9';
+let hashPassword = '041c8586d0221f3099080a0fc12ccb0d373ef0350c38c43f38dfe0d9';
 let panelVersion = '2.6.4';
 
 if (!isValidUUID(userID)) throw new Error(`Invalid UUID: ${userID}`);
