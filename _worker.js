@@ -1983,7 +1983,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 				</div>
 			</form>
             <hr>            
-			<h2>NORMAL SUB 🔗</h2>
+			<h2>Clean订阅复制</h2>
 			<div class="table-container">
 				<table id="normal-configs-table">
 					<tr>
