@@ -1449,7 +1449,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BPB Panel ${panelVersion}</title>
+        <title>BPB 订阅后台 ${panelVersion}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <title>Collapsible Sections</title>
@@ -1740,35 +1740,35 @@ async function renderHomePage (env, hostName, fragConfigs) {
 		</style>
 	</head>
 	<body>
-		<h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> 💦</h1>
+		<h1>BPB Panel <span style="font-size: smaller;">${panelVersion}</span> </h1>
 		<div class="form-container">
             <form id="configForm">
                 <details open>
                     <summary><h2>VLESS / TROJAN ⚙️</h2></summary>
                     <div class="form-control">
-                        <label for="remoteDNS">🌏 Remote DNS</label>
+                        <label for="remoteDNS">远程DNS</label>
                         <input type="url" id="remoteDNS" name="remoteDNS" value="${remoteDNS}" required>
                     </div>
                     <div class="form-control">
-                        <label for="localDNS">🏚️ Local DNS</label>
+                        <label for="localDNS">本地DNS</label>
                         <input type="text" id="localDNS" name="localDNS" value="${localDNS}"
                             pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)|localhost$"
                             title="Please enter a valid DNS IP Address or localhost!"  required>
                     </div>
                     <div class="form-control">
-                        <label for="proxyIP">📍 Proxy IP</label>
+                        <label for="proxyIP">ProxyIP</label>
                         <input type="text" id="proxyIP" name="proxyIP" value="${proxyIP}">
                     </div>
                     <div class="form-control">
-                        <label for="outProxy">✈️ Chain Proxy</label>
+                        <label for="outProxy">ChainProxy</label>
                         <input type="text" id="outProxy" name="outProxy" value="${outProxy}">
                     </div>
                     <div class="form-control">
-                        <label for="cleanIPs">✨ Clean IPs</label>
+                        <label for="cleanIPs">优选IP</label>
                         <input type="text" id="cleanIPs" name="cleanIPs" value="${cleanIPs.replaceAll(",", " , ")}">
                     </div>
                     <div class="form-control">
-                        <label>🔎 IP Scanner</label>
+                        <label>优选IP地址</label>
                         <a href="https://scanner.github1.cloud/" id="scanner" name="scanner" target="_blank" style="width: 100%;">
                             <button type="button" class="button">
                                 Scan now
@@ -1777,7 +1777,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                         </a>
                     </div>
                     <div class="form-control">
-                        <label for="enableIPv6">🔛 IPv6 Configs</label>
+                        <label for="enableIPv6">开启IPV6</label>
                         <div class="input-with-select">
                             <select id="enableIPv6" name="enableIPv6">
                                 <option value="true" ${enableIPv6 ? 'selected' : ''}>Enabled</option>
@@ -1786,23 +1786,23 @@ async function renderHomePage (env, hostName, fragConfigs) {
                         </div>
                     </div>
                     <div class="form-control">
-                        <label for="customCdnAddrs">💀 Custom CDN Addrs</label>
+                        <label for="customCdnAddrs">自定义DNS地址</label>
                         <input type="text" id="customCdnAddrs" name="customCdnAddrs" value="${customCdnAddrs.replaceAll(",", " , ")}">
                     </div>
                     <div class="form-control">
-                        <label for="customCdnHost">💀 Custom CDN Host</label> 
+                        <label for="customCdnHost">自定义CDN Host</label> 
                         <input type="text" id="customCdnHost" name="customCdnHost" value="${customCdnHost}">
                     </div>
                     <div class="form-control">
-                        <label for="customCdnSni">💀 Custom CDN SNI</label>
+                        <label for="customCdnSni">自定义CDN SNI</label>
                         <input type="text" id="customCdnSni" name="customCdnSni" value="${customCdnSni}">
                     </div>
                     <div class="form-control">
-                        <label for="bestVLESSTrojanInterval">🔄 Best Interval</label>
+                        <label for="bestVLESSTrojanInterval">最佳间隔</label>
                         <input type="number" id="bestVLESSTrojanInterval" name="bestVLESSTrojanInterval" min="10" max="90" value="${bestVLESSTrojanInterval}">
                     </div>
                     <div class="form-control" style="padding-top: 10px;">
-                        <label>⚙️ Protocols</label>
+                        <label>协议选择</label>
                         <div style="width: 100%; display: grid; grid-template-columns: 1fr 1fr; align-items: baseline; margin-top: 10px;">
                             <div style = "display: flex; justify-content: center; align-items: center;">
                                 <input type="checkbox" id="vlessConfigs" name="vlessConfigs" onchange="handleProtocolChange(event)" value="true" ${vlessConfigs ? 'checked' : ''}>
@@ -1832,7 +1832,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     </div>
                 </details>
                 <details>
-                    <summary><h2>FRAGMENT ⚙️</h2></summary>	
+                    <summary><h2>FRAGMENT</h2></summary>	
                     <div class="form-control">
                         <label for="fragmentLengthMin">📐 Length</label>
                         <div class="min-max">
@@ -1842,7 +1842,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                         </div>
                     </div>
                     <div class="form-control">
-                        <label for="fragmentIntervalMin">🕞 Interval</label>
+                        <label for="fragmentIntervalMin">Interval</label>
                         <div class="min-max">
                             <input type="number" id="fragmentIntervalMin" name="fragmentIntervalMin"
                                 value="${intervalMin}" min="1" max="30" required>
@@ -1852,7 +1852,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                         </div>
                     </div>
                     <div class="form-control">
-                        <label for="fragmentPackets">📦 Packets</label>
+                        <label for="fragmentPackets">Packets</label>
                         <div class="input-with-select">
                             <select id="fragmentPackets" name="fragmentPackets">
                                 <option value="tlshello" ${fragmentPackets === 'tlshello' ? 'selected' : ''}>tlshello</option>
@@ -1865,7 +1865,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     </div>
                 </details>
                 <details>
-                    <summary><h2>ROUTING RULES ⚙️</h2></summary>
+                    <summary><h2>ROUTING RULES</h2></summary>
                     <div id="routing-rules" class="form-control" style="margin-bottom: 20px;">			
                         <div class="routing">
                             <input type="checkbox" id="block-ads" name="block-ads" value="true" ${blockAds ? 'checked' : ''}>
