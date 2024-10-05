@@ -287,7 +287,7 @@ export default {
 
                     default:
                         // return new Response('Not found', { status: 404 });
-                        url.hostname = 'cfip.nyc.mn';
+                        url.hostname = 'www.cfip.nyc.mn/404';
                         url.protocol = 'https:';
                         request = new Request(url, request);
                         return await fetch(request);
