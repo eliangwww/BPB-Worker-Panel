@@ -1130,7 +1130,7 @@ function generateRemark(index, port, address, cleanIPs, protocol, configType) {
         ? addressType = '优选IP'
         : addressType = isDomain(address) ? '优选域名': isIPv4(address) ? 'IPv4' : isIPv6(address) ? 'IPv6' : '';
 
-    return `BPB${addressType}${index}-${port}`;
+    return `BPB${addressType}-${port}_${index}`;
 }
 
 function isDomain(address) {
