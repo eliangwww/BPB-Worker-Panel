@@ -1127,10 +1127,10 @@ function generateRemark(index, port, address, cleanIPs, protocol, configType) {
     const type = configType ? ` ${configType}` : '';
 
     cleanIPs.includes(address)
-        ? addressType = 'Clean IP'
-        : addressType = isDomain(address) ? 'Domain': isIPv4(address) ? 'IPv4' : isIPv6(address) ? 'IPv6' : '';
+        ? addressType = '优选IP'
+        : addressType = isDomain(address) ? '优选域名': isIPv4(address) ? 'IPv4' : isIPv6(address) ? 'IPv6' : '';
 
-    return `BPB优选-${port}-${index}`;
+    return `BPB${addressType}-${port}-${index}`;
 }
 
 function isDomain(address) {
