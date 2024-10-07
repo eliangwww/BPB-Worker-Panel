@@ -2743,7 +2743,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
             const hasNumber = /[0-9]/.test(newPassword);
             const isLongEnough = newPassword.length >= 8;
 
-            if (!(hasCapitalLetter && hasNumber && isLongEnough)) {
+            if (!(hasNumber && isLongEnough)) {
                 passwordError.textContent = '⚠️ Password must contain at least one capital letter, one number, and be at least 8 characters long.';
                 return false;
             }
