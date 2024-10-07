@@ -1454,6 +1454,45 @@ async function renderHomePage (env, hostName, fragConfigs) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <title>Collapsible Sections</title>
 		<style>
+    /* 柔和的动态字体效果 */
+    @keyframes smoothFontChange {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.02);
+        }
+    }
+
+    /* 整个页面字体的动态效果 */
+    body, h1, h2, h3, p, label, input, button {
+        animation: smoothFontChange 10s ease-in-out infinite;
+    }
+
+    /* 调整背景为渐变色 */
+    body {
+        background: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    /* 更新按钮样式 */
+    .button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .button:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+		<style>
             :root {
                 --color: black;
                 --primary-color: #09639f;
@@ -1635,7 +1674,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                 width: 100%;
                 height: 100%;
                 overflow: auto;
-                background-color: rgba(0, 0, 0, 0.4);
+                background-color: rgba(0, 0, 0, 0.1);
             }
             .modal-content {
                 background-color: var(--form-background-color);
