@@ -1128,9 +1128,9 @@ function generateRemark(index, port, address, cleanIPs, protocol, configType) {
 
     cleanIPs.includes(address)
         ? addressType = '优选IP'
-        : addressType = isDomain(address) ? '优选域名': isIPv4(address) ? 'IPv4' : isIPv6(address) ? 'IPv6' : '';
+        : addressType = isDomain(address) ? '优选域名': isIPv4(address) ? '备用' : isIPv6(address) ? '备用v6' : '';
 
-    return `BPB${addressType}-${port}_${index}`;
+    return `🆕优选_请勿测速${addressType}-${port}_${index}🚀`;
 }
 
 function isDomain(address) {
