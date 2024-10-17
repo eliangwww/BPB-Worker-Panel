@@ -2022,7 +2022,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
 				</div>
 			</form>
             <hr>            
-			<h2>Clean订阅复制</h2>
+			<h2>订阅复制</h2>
 			<div class="table-container">
 				<table id="normal-configs-table">
 					<tr>
@@ -2144,67 +2144,7 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     </tr>
 				</table>
 			</div>
-			<h2>FRAGMENT SUB ⛓️</h2>
-			<div class="table-container">
-                <table id="frag-sub-table">
-                    <tr>
-                        <th style="text-wrap: nowrap;">Application</th>
-                        <th style="text-wrap: nowrap;">Subscription</th>
-                    </tr>
-                    <tr>
-                        <td style="text-wrap: nowrap;">
-                            <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
-                                <span>v2rayNG</span>
-                            </div>
-                            <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
-                                <span>NikaNG</span>
-                            </div>
-                            <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
-                                <span>MahsaNG</span>
-                            </div>
-                            <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
-                                <span>v2rayN</span>
-                            </div>
-                            <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
-                                <span>v2rayN-PRO</span>
-                            </div>
-                            <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
-                                <span>Streisand</span>
-                            </div>
-                        </td>
-                        <td>
-                            <button onclick="openQR('https://${hostName}/fragsub/${userID}#BPB Fragment', 'Fragment Subscription')" style="margin-bottom: 8px;">
-                                QR Code&nbsp;<span class="material-symbols-outlined">qr_code</span>
-                            </button>
-                            <button onclick="copyToClipboard('https://${hostName}/fragsub/${userID}#BPB Fragment', true)">
-                                Copy Sub<span class="material-symbols-outlined">format_list_bulleted</span>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-wrap: nowrap;">
-                            <div>
-                                <span class="material-symbols-outlined symbol">verified</span>
-                                <span>Hiddify</span>
-                            </div>
-                        </td>
-                        <td>
-                            <button onclick="openQR('https://${hostName}/fragsub/${userID}?app=hiddify#BPB-Fragment', 'Fragment Subscription')" style="margin-bottom: 8px;">
-                                QR Code&nbsp;<span class="material-symbols-outlined">qr_code</span>
-                            </button>
-                            <button onclick="copyToClipboard('https://${hostName}/fragsub/${userID}?app=hiddify#BPB-Fragment', true)">
-                                Copy Sub<span class="material-symbols-outlined">format_list_bulleted</span>
-                            </button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+	
             <h2>WARP SUB 🔗</h2>
 			<div class="table-container">
 				<table id="normal-configs-table">
