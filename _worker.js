@@ -3901,7 +3901,7 @@ function buildClashChainOutbound(chainProxyParams) {
         "uuid": uuid,
         "flow": flow,
         "network": type,
-        "dialer-proxy": "💦 Best Ping 💥"
+        "dialer-proxy": "自动选择"
     };
 
     if (security === 'tls') {
@@ -4037,8 +4037,8 @@ async function getClashConfig (env, hostName, isWarp) {
         });
 
     } else {
-        config['proxy-groups'][0].proxies = ['💦 Best Ping 💥'];
-        config['proxy-groups'][1].name = '💦 Best Ping 💥';
+        config['proxy-groups'][0].proxies = ['自动选择'];
+        config['proxy-groups'][1].name = '自动选择';
         config['proxy-groups'][1].interval = +bestVLESSTrojanInterval;
     }
 
@@ -4925,11 +4925,11 @@ const singboxConfigTemp = {
         {
             type: "selector",
             tag: "proxy",
-            outbounds: ["💦 Best Ping 💥"]
+            outbounds: ["自动选择"]
         },
         {
             type: "urltest",
-            tag: "💦 Best Ping 💥",
+            tag: "自动选择",
             outbounds: [],
             url: "https://www.gstatic.com/generate_204",
             interval: "30s",
