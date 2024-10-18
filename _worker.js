@@ -1895,31 +1895,87 @@ async function renderHomePage (env, hostName, fragConfigs) {
                     </div>
                 </details>
                 <details>
-                    <summary><h2>规则</h2></summary>
-                    <div id="routing-rules" class="form-control" style="margin-bottom: 20px;">			
-                        <div class="routing">
-                            <input type="checkbox" id="block-ads" name="block-ads" value="true" ${blockAds ? 'checked' : ''}>
-                            <label for="block-ads">Block Ads.</label>
+                    <summary><h2>WARP GENERAL \u2699\uFE0F</h2></summary>
+                    <div class="form-control">
+                        <label for="warpEndpoints">\u2728 Endpoints</label>
+                        <input type="text" id="warpEndpoints" name="warpEndpoints" value="${warpEndpoints.replaceAll(",", " , ")}" required>
+                    </div>
+                    <div class="form-control">
+                        <label style="line-height: 1.5;">\u{1F50E} Scan Endpoint</label>
+                        <button type="button" class="button" style="padding: 10px 0;" onclick="copyToClipboard('bash <(curl -fsSL https://raw.githubusercontent.com/Ptechgithub/warp/main/endip/install.sh)', false)">
+                            Copy Script<span class="material-symbols-outlined">terminal</span>
+                        </button>
+                    </div>
+                    <div class="form-control">
+                        <label for="warpFakeDNS">\u{1F9E2} Fake DNS</label>
+                        <div class="input-with-select">
+                            <select id="warpFakeDNS" name="warpFakeDNS">
+                                <option value="true" ${warpFakeDNS ? "selected" : ""}>Enabled</option>
+                                <option value="false" ${!warpFakeDNS ? "selected" : ""}>Disabled</option>
+                            </select>
                         </div>
-                        <div class="routing">
-                            <input type="checkbox" id="bypass-iran" name="bypass-iran" value="true" ${bypassIran ? 'checked' : ''}>
-                            <label for="bypass-iran">Bypass Iran</label>
+                    </div>
+                    <div class="form-control">
+                        <label for="warpPlusLicense">\u2795 Warp+ License</label>
+                        <input type="text" id="warpPlusLicense" name="warpPlusLicense" value="${warpPlusLicense}" 
+                            pattern="^[a-zA-Z0-9]{8}-[a-zA-Z0-9]{8}-[a-zA-Z0-9]{8}$" 
+                            title="Please enter a valid Warp Plus license in xxxxxxxx-xxxxxxxx-xxxxxxxx format">
+                    </div>
+                    <div class="form-control">
+                        <label>\u267B\uFE0F Warp Configs</label>
+                        <button id="refreshBtn" type="button" class="button" style="padding: 10px 0;" onclick="getWarpConfigs()">
+                            Update<span class="material-symbols-outlined">autorenew</span>
+                        </button>
+                    </div>
+                    <div class="form-control">
+                        <label for="bestWarpInterval">\u{1F504} Best Interval</label>
+                        <input type="number" id="bestWarpInterval" name="bestWarpInterval" min="10" max="90" value="${bestWarpInterval}">
+                    </div>
+                </details>
+                <details>
+                    <summary><h2>WARP PRO \u2699\uFE0F</h2></summary>
+                    <div class="form-control">
+                        <label for="hiddifyNoiseMode">\u{1F635}\u200D\u{1F4AB} Hiddify Mode</label>
+                        <input type="text" id="hiddifyNoiseMode" name="hiddifyNoiseMode" 
+                            pattern="^(m[1-6]|h_[0-9A-Fa-f]{2}|g_([0-9A-Fa-f]{2}_){2}[0-9A-Fa-f]{2})$" 
+                            title="Enter 'm1-m6', 'h_HEX', 'g_HEX_HEX_HEX' which HEX can be between 00 to ff"
+                            value="${hiddifyNoiseMode}" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="nikaNGNoiseMode">\u{1F635}\u200D\u{1F4AB} NikaNG Mode</label>
+                        <input type="text" id="nikaNGNoiseMode" name="nikaNGNoiseMode" 
+                            pattern="^(none|quic|random|[0-9A-Fa-f]+)$" 
+                            title="Enter 'none', 'quic', 'random', or any HEX string like 'ee0000000108aaaa'"
+                            value="${nikaNGNoiseMode}" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="noiseCountMin">\u{1F39A}\uFE0F Noise Count</label>
+                        <div class="min-max">
+                            <input type="number" id="noiseCountMin" name="noiseCountMin"
+                                value="${noiseCountMin}" min="1" required>
+                            <span> - </span>
+                            <input type="number" id="noiseCountMax" name="noiseCountMax"
+                                value="${noiseCountMax}" min="1" required>
                         </div>
-                        <div class="routing">
-                            <input type="checkbox" id="block-porn" name="block-porn" value="true" ${blockPorn ? 'checked' : ''}>
-                            <label for="block-porn">Block Porn</label>
+                    </div>
+                    <div class="form-control">
+                        <label for="noiseSizeMin">\u{1F4CF} Noise Size</label>
+                        <div class="min-max">
+                            <input type="number" id="noiseSizeMin" name="noiseSizeMin"
+                                value="${noiseSizeMin}" min="1" required>
+                            <span> - </span>
+                            <input type="number" id="noiseSizeMax" name="noiseSizeMax"
+                                value="${noiseSizeMax}" min="1" required>
                         </div>
-                        <div class="routing">
-                            <input type="checkbox" id="bypass-lan" name="bypass-lan" value="true" ${bypassLAN ? 'checked' : ''}>
-                            <label for="bypass-lan">Bypass LAN</label>
-                        </div>
-                        <div class="routing">
-                            <input type="checkbox" id="block-udp-443" name="block-udp-443" value="true" ${blockUDP443 ? 'checked' : ''}>
-                            <label for="block-udp-443">Block QUIC</label>
-                        </div>
-                        <div class="routing">
-                            <input type="checkbox" id="bypass-china" name="bypass-china" value="true" ${bypassChina ? 'checked' : ''}>
-                            <label for="bypass-china">Bypass China</label>
+                    </div>
+                    <div class="form-control">
+                        <label for="noiseDelayMin">\u{1F55E} Noise Delay</label>
+                        <div class="min-max">
+                            <input type="number" id="noiseDelayMin" name="noiseDelayMin"
+                                value="${noiseDelayMin}" min="1" required>
+                            <span> - </span>
+                            <input type="number" id="noiseDelayMax" name="noiseDelayMax"
+                                value="${noiseDelayMax}" min="1" required>
                         </div>
                     </div>
                 </details>
