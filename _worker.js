@@ -1923,16 +1923,15 @@ async function renderHomePage (env, hostName, fragConfigs) {
                         </div>
                     </div>
                 </details>
-
-				<div id="apply" class="form-control">
-					<div style="grid-column: 2; width: 100%; display: inline-flex;">
-						<input type="submit" id="applyButton" style="margin-right: 10px;" class="button disabled" value="保存" form="configForm">
+                <div id="apply" class="form-control">
+                    <div style="grid-column: 2; width: 100%; display: inline-flex;">
+                        <input type="submit" id="applyButton" style="margin-right: 10px;" class="button disabled" value="APPLY SETTINGS \u{1F4A5}" form="configForm">
                         <button type="button" id="resetSettings" style="background: none; margin: 0; border: none; cursor: pointer;">
                             <i class="fa fa-refresh fa-2x fa-border" style="border-radius: .2em; border-color: var(--border-color);" aria-hidden="true"></i>
                         </button>
-					</div>
-				</div>
-			</form>
+                    </div>
+                </div>
+            </form>
             <hr>            
 			<h2>订阅复制</h2>
 			<div class="table-container">
