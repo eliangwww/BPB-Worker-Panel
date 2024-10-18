@@ -4929,7 +4929,7 @@ const clashConfigTemp = {
     "proxies": [],
     "proxy-groups": [
         {
-            "name": "✅ Selector",
+            "name": "✅节点选择",
             "type": "select",
             "proxies": []
         },
