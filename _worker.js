@@ -2026,8 +2026,8 @@ async function renderHomePage (env, hostName, fragConfigs) {
 			<div class="table-container">
 				<table id="normal-configs-table">
 					<tr>
-						<th>Application</th>
-						<th>Subscription</th>
+						<th>订阅程序</th>
+						<th>S订阅链接</th>
 					</tr>
 					<tr>
                         <td>
