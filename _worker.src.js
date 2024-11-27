@@ -1471,9 +1471,16 @@ async function renderHomePage (env, hostName, fragConfigs) {
 
     /* 调整背景为渐变色 */
     body {
-        background: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);
-        color: #333;
-        font-family: 'Roboto', sans-serif;
+        body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* 黑色半透明层 */
+                url('https://raw.githubusercontent.com/eliangwww/index/refs/heads/main/images/bkg.jpg'); /* 替换为您的自定义图片URL */
+    background-size: cover; /* 背景图片覆盖整个页面 */
+    background-position: center center; /* 背景居中 */
+    background-attachment: fixed; /* 背景固定 */
+    color: #fff; /* 文字颜色设置为白色，便于在背景上清晰显示 */
+    font-family: 'Roboto', sans-serif;
+}
+
     }
 
     /* 更新按钮样式 */
